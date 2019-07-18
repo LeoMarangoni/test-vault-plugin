@@ -16,8 +16,10 @@ node {
 
   // inside this block your credentials will be available as env variables
   wrap([$class: 'VaultBuildWrapper', configuration: configuration, vaultSecrets: secrets]) {
+      sh 'echo start'
       sh 'echo $testing'
       sh 'echo $testing_again'
       sh 'echo $another_test'
+      sh 'echo end'
   }
 }
